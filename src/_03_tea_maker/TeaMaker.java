@@ -1,4 +1,7 @@
 package _03_tea_maker;
+
+import javax.swing.JOptionPane;
+
 /*
  *    Copyright (c) The League of Amazing Programmers 2013-2019
  *    Level 1
@@ -7,7 +10,17 @@ package _03_tea_maker;
 public class TeaMaker {
 
 	/* Figure out how to make a cup of tea in this runner class, using the other classes below */
-
+	public static void main(String[] args) {
+		String flavor = JOptionPane.showInputDialog("What's your tea flavor?");
+		TeaBag tea = new TeaBag(flavor);
+		Kettle kettle = new Kettle();
+		Cup cup = new Cup();
+		Kettle.Water water = kettle.getWater();
+		kettle.boil();
+		cup.makeTea(tea, water);
+		
+	}
+	
 }
 
 class TeaBag {
